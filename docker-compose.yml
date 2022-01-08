@@ -1,0 +1,20 @@
+version: "3"
+services:
+  jupyter:
+    image: dsit-docker:2.7.0-gpu
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - TF_PACKAGE_VERSION=2.7.0-gpu
+    ports:
+      - 8888:8888
+    volumes:
+      - './Notebook:/tf/Notebook'
+    environment:
+      TZ: Asia/Tokyo
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
