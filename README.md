@@ -1,7 +1,6 @@
 # DSIT Docker
 
-Provides a Notebook environment for DSIT on Docker  
-(including CUDA environment)  
+Provides a Notebook environment for DSIT on Docker (include CUDA environment)  
 Some google colab specific features cannot be used.
 
 ## Based Docker image
@@ -27,6 +26,7 @@ Some google colab specific features cannot be used.
 - scikit-image
 - statsmodels
 - jupyterlab
+- jupyterlab-language-pack-ja-JP
 
 ### Jupyter Extensions
 

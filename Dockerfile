@@ -23,7 +23,7 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install Python modules
 # RUN python3 -m pip install --no-cache-dir git+https://github.com/googlecolab/colabtools.git psutil --use-feature=2020-resolver
-RUN python3 -m pip install --no-cache-dir pandas seaborn sklearn graphviz xgboost lightgbm imblearn pydot opencv-python tqdm imageio scikit-image statsmodels jupyterlab jupyterlab-git
+RUN python3 -m pip install --no-cache-dir pandas seaborn sklearn graphviz xgboost lightgbm imblearn pydot opencv-python tqdm imageio scikit-image statsmodels jupyterlab jupyterlab-git jupyterlab-language-pack-ja-JP
 # RUN python3 -m pip install --no-cache-dir --upgrade ipython jupyter jupyterlab
 
 # # Install JupyterLab Extension
