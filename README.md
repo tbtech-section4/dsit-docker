@@ -53,8 +53,8 @@ ex.)
 ```bash
 $TF_PACKAGE_VERSION="2.7.0-gpu"
 # build image
-docker build -t dsit:${TF_PACKAGE_VERSION} --build-arg TF_PACKAGE_VERSION=${TF_PACKAGE_VERSION} ./
+docker build -t tbtech/dsit:${TF_PACKAGE_VERSION} --build-arg TF_PACKAGE_VERSION=${TF_PACKAGE_VERSION} ./
 
 # run container
-docker run --rm -it --gpus all -p 8888:8888 -v ${PWD}/Notebook:/tf/Notebook -t dsit:${TF_PACKAGE_VERSION}
+docker run --rm -it --gpus all -p 8888:8888 -v ${PWD}/Notebook:/tf/Notebook -t tbtech/dsit:${TF_PACKAGE_VERSION}
 ```
