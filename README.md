@@ -51,7 +51,7 @@ ex.)
 ### Build image example
 
 ```bash
-$TF_PACKAGE_VERSION="2.9.1-gpu"
+$TF_PACKAGE_VERSION="2.10.0-gpu"
 # build image
 docker build -t tbtech/dsit:${TF_PACKAGE_VERSION} --build-arg TF_PACKAGE_VERSION=${TF_PACKAGE_VERSION} ./
 
