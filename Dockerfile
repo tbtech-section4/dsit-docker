@@ -15,8 +15,8 @@ RUN apt-get install -y --no-install-recommends libgl1-mesa-dev
 RUN apt-get install -y --no-install-recommends protobuf-compiler
 
 # Install nodejs
-RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - \
-    && apt-get install -y nodejs
+# RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - \
+#     && apt-get install -y nodejs
 
 # Clenup
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
@@ -29,8 +29,9 @@ RUN python3 -m pip install --no-cache-dir nbformat -U
 # RUN python3 -m pip install --no-cache-dir --upgrade ipython jupyter jupyterlab
 
 # # Install JupyterLab Extension
-RUN jupyter labextension install @lckr/jupyterlab_variableinspector@3.0.7
-RUN jupyter labextension enable jupyterlab_variableinspector
+RUN python3 -m pip install --no-cache-dir lckr-jupyterlab-variableinspector
+# RUN jupyter labextension install @lckr/jupyterlab_variableinspector@3.0.7
+# RUN jupyter labextension enable jupyterlab_variableinspector
 # RUN jupyter lab build
 
 # configure jupyter
@@ -38,4 +39,4 @@ RUN jupyter notebook --generate-config && ipython profile create
 RUN echo "c.InteractiveShellApp.matplotlib = 'inline'" >> /root/.ipython/profile_default/ipython_config.py
 
 # execute jupyter lab
-CMD ["bash", "-c", "source /etc/bash.bashrc && jupyter lab --notebook-dir=/tf --ip 0.0.0.0 --no-browser --allow-root --NotebookApp.allow_origin='https://colab.research.google.com' --NotebookApp.token='dsit'"]
+CMD ["bash", "-c", "source /etc/bash.bashrc && jupyter lab --notebook-dir=/tf --ip 0.0.0.0 --no-browser --allow-root --NotebookApp.allow_origin='*' --NotebookApp.token='dsit'"]
