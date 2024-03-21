@@ -1,12 +1,12 @@
 version: "3"
 services:
   jupyter:
-    image: tbtech/dsit:2.15.0-gpu
+    image: tbtech/dsit:2.16.1-gpu
     build:
       context: .
       dockerfile: Dockerfile
       args:
-        - TF_PACKAGE_VERSION=2.15.0-gpu
+        - TF_PACKAGE_VERSION=2.16.1-gpu
     ports:
       - 8888:8888
     volumes:
