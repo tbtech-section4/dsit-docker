@@ -38,8 +38,8 @@ Some google colab specific features cannot be used.
 1. Set the version of TensorFlow you want to use to `$TF_PACKAGE_VERSION`  
 If `$TF_PACKAGE_VERSION` is blank, it will be 'latest'.  
 ex.)  
-    `2.19.0` (<- TensorFlow 2.19.0)  
-    `2.19.0-gpu` (<- TensorFlow 2.19.0 and CUDA)  
+    `2.20.0` (<- TensorFlow 2.20.0)  
+    `2.20.0-gpu` (<- TensorFlow 2.20.0 and CUDA)  
     `latest` (<- latest version (default))  
     `latest-gpu`(<- latest version and CUDA)  
 
@@ -52,7 +52,7 @@ ex.)
 
 ```bash
 # set package version
-export TF_PACKAGE_VERSION="2.19.0-gpu"
+export TF_PACKAGE_VERSION="2.20.0-gpu"
 # build image
 docker build -t ghcr.io/tbtech-section4/dsit:${TF_PACKAGE_VERSION} --build-arg TF_PACKAGE_VERSION=${TF_PACKAGE_VERSION} ./
 
